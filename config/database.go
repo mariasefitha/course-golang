@@ -26,6 +26,7 @@ func ConnectDB() {
 
 	fmt.Println("Mencoba koneksi dengan config:")
 	fmt.Printf("host=%s user=%s password=%s dbname=%s port=%d\n", host, user, password, dbname, port)
+	fmt.Printf("DB HOST: %s, PORT: %d, USER: %s, NAME: %s\n", host, port, user, dbname)
 
 	DB, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
