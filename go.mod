@@ -1,4 +1,4 @@
-module tugas-14-bioskop
+module course-golang
 
 go 1.24.4
 

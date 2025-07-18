@@ -1,9 +1,9 @@
 package main
 
 import (
-	"tugas-14-bioskop/config"
-	"tugas-14-bioskop/controller"
-	"tugas-14-bioskop/model"
+	"course-golang/config"
+	"course-golang/controller"
+	"course-golang/model"
 
 	"github.com/gin-gonic/gin"
 )

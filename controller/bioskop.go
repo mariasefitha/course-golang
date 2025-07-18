@@ -1,10 +1,10 @@
 package controller
 
 import (
+	"course-golang/config"
+	"course-golang/model"
 	"net/http"
 	"strconv"
-	"tugas-14-bioskop/config"
-	"tugas-14-bioskop/model"
 
 	"github.com/gin-gonic/gin"
 )
