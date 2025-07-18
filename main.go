@@ -4,6 +4,7 @@ import (
 	"course-golang/config"
 	"course-golang/controller"
 	"course-golang/model"
+	"os"
 
 	"github.com/gin-gonic/gin"
 )
@@ -23,5 +24,10 @@ func main() {
 		api.DELETE("/:id", controller.DeleteBioskop)
 	}
 
-	r.Run(":8080")
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080" // fallback default
+	}
+	r.Run(":" + port)
+
 }

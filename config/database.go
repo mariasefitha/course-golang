@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strconv"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -14,12 +15,11 @@ var DB *gorm.DB
 func ConnectDB() {
 	var err error
 
-	// Ganti sesuai konfigurasi database kamu
-	host := "localhost"
-	port := 5432
-	user := "postgres"
-	password := "msfitha0880" // Ganti dengan password PostgreSQL kamu
-	dbname := "bioskop_db"    // Nama database yang akan kamu buat
+	host := os.Getenv("DB_HOST")
+	port, _ := strconv.Atoi(os.Getenv("DB_PORT"))
+	user := os.Getenv("DB_USER")
+	password := os.Getenv("DB_PASSWORD")
+	dbname := os.Getenv("DB_NAME")
 
 	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%d sslmode=disable",
 		host, user, password, dbname, port)
